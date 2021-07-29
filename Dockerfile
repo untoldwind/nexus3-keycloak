@@ -1,6 +1,6 @@
 # https://github.com/sonatype/docker-nexus3
 # https://hub.docker.com/r/sonatype/nexus3
-FROM sonatype/nexus3:3.30.1
+FROM sonatype/nexus3:3.32.0
 
 ENV NEXUS_PLUGINS ${NEXUS_HOME}/deploy
 
