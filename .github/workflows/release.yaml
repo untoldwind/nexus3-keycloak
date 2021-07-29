@@ -14,6 +14,8 @@ jobs:
       uses: docker/setup-qemu-action@v1
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
+    - name: Get the tag name
+      run: echo "TAG=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_ENV
     - name: Login to DockerHub
       uses: docker/login-action@v1
       with:
@@ -24,4 +26,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: untoldwind/nexus3-keycloak:${{ github.ref }}
+        tags: untoldwind/nexus3-keycloak:${{ env.TAG }}
